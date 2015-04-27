@@ -52,6 +52,8 @@ function percentileCreateRotate(elements, options, slideCount, displayCount){
 			
 		} else {
 			$(options.next+', '+options.prev).removeClass('active');
+			$(this).find(options.slides).css('left', "auto");
+			$(this).find(options.slides).css('position', "relative");
 		}
 	});
 }
