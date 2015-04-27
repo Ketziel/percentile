@@ -1,0 +1,77 @@
+<!doctype html>
+	<head>
+		<style>
+			.slides {width: 100%; position: relative; overflow: hidden;}
+				.slides .slide {width: 33.33%; display: inline-block; left: 0; line-height: 0;}
+					.slides .slide.animation{transition: left .5s;}
+						.slides .slide  .upper .overlay {transition: height .5s;}
+						.slides .slide.animation  .upper .overlay {transition: none;}
+				
+					.slides .slide img {width: 100%;}
+			.slides .next, .slides .prev {display: block; opacity: 0; width: 2em; height: 2em; position: absolute; background: red; transition: .5s; z-index: 99;}
+			.slides .next.active, .slides .prev.active {opacity: 1;}
+				.slides .next {margin: auto; right: 0; top: 0; bottom: 0;}
+				.slides .prev {margin: auto; left: 0; top: 0; bottom: 0;}
+				
+				
+					.slides .slide .upper {width: 100%; position: relative;}
+						.slides .slide  .upper img {width: 100%;}
+						.slides .slide  .upper .overlay {line-height: 1em; width: 100%; height: 0%; position: absolute; text-align: center; bottom: 0; overflow: hidden; background-color:#32adb1; background-color:rgba(50, 173, 177, .9);color: #fff;}
+						.slides .slide:hover .upper .overlay {height: 100%;}
+							.slides .slide  .upper .overlay p {margin: 5em 2em 2em; font-size: 1.2em;}
+							.slides .slide  .upper .overlay .button > span.css-icon {  font-size: 1.3em;}
+					.slides .slide .lower {width: 100%; text-align: center; font-family: "pathway_gothic_oneregular",sans-serif; line-height: 4.4em; background-color:#F7F7F5;}
+					.slides .slide:hover .lower {background-color:#fff;}
+						.slides .slide  .lower span {font-size: 1.3125em;}
+				
+				
+				
+		</style>
+		
+		<script src="jquery-1.11.1.min.js"></script>
+		<script src="jquery.percentile.js"></script>
+		<script>
+			$(window).load(function(){
+				$('.slides').percentile();
+			});
+		</script>
+	</head>
+	<body>
+		<div class="slides">
+			<a href="#" class="next">Next</a>
+			<a href="#" class="prev">Prev</a>
+			
+			<div class="slide">
+				<div class="upper">
+					<div class="overlay">
+						<p>Super Duper Overlay</p>
+					</div>
+					<img src="http://placehold.it/480x380/990000/ffffff"></div>
+				<div class="lower">
+					<span>title</span>
+				</div>
+			</div><!--
+			--><div class="slide">
+				<div class="upper">
+					<div class="overlay">
+						<p>Super Duper Overlay</p>
+					</div>
+					<img src="http://placehold.it/480x380/009900/ffffff"></div>
+				<div class="lower">
+					<span>title</span>
+				</div>
+			</div><!--
+			--><div class="slide">
+				<div class="upper">
+					<div class="overlay">
+						<p>Super Duper Overlay</p>
+					</div>
+					<img src="http://placehold.it/480x380/000099/ffffff"></div>
+				<div class="lower">
+					<span>title</span>
+				</div>
+			</div><!--
+			-->
+		</div>
+	</body>
+</html>
