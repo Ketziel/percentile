@@ -150,7 +150,7 @@ function percentileCreateRotate(elements, options, slideCount, displayCount){
 		targets.find(options.slides).each(function() {
 			if (parseInt(this.style.left.replace('%',''))>lastSlideLeft){
 				lastSlideLeft = parseInt(this.style.left.replace('%',''));
-				console.log(lastSlideLeft);
+				
 			}
 		});
 		
@@ -161,10 +161,12 @@ function percentileCreateRotate(elements, options, slideCount, displayCount){
 		
 		
 		$(window).bind('resize',$.proxy(function(){
+			lastSlideLeft = 0;
 			targets.find(options.slides).each(function() {
+				console.log('last'+lastSlideLeft);
 				if (parseInt(this.style.left.replace('%',''))>lastSlideLeft){
 					lastSlideLeft = parseInt(this.style.left.replace('%',''));
-					console.log(lastSlideLeft);
+					
 				}
 			});
 			percentileHeightWidth(targets, options);
