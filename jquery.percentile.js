@@ -63,7 +63,7 @@ function percentileCreateRotate(elements, options, slideCount, displayCount){
 
 		var defaults = {
 			slides: '.slide',
-			breakpoints:  '{ "full": 3, "768": 2, "520": 1 }',
+			breakpoints:  '{ "full": 3, "768": 2, "420": 1 }',
 			next: '.slides .next',
 			prev: '.slides .prev'
 		}
@@ -72,31 +72,12 @@ function percentileCreateRotate(elements, options, slideCount, displayCount){
 		var animating = false;
 		
 		percentileHeightWidth(targets, options);
-		
-		//$(options.next, options.prev).fade();
-		
+
 		$(this).find(options.slides).on(
 			"transitionend MSTransitionEnd webkitTransitionEnd oTransitionEnd",
 			function() {
 				animating = false;
 				$(this).removeClass("animation");
-				
-				/*var slideWidthPercent = parseInt(this.style.width.replace('%',''));
-				var lastSlideLeft = 0;						
-				$(this).parent().find(options.slides).each(function() {
-					if (parseInt(this.style.left.replace('%',''))>lastSlideLeft){
-						lastSlideLeft = parseInt(this.style.left.replace('%',''));
-						console.log(lastSlideLeft);
-					}
-				});
-				
-				if (parseInt(this.style.left.replace('%','')) < 0){				
-					$(this).css('left',(lastSlideLeft + slideWidthPercent)+'%');				
-				} else if (parseInt(this.style.left.replace('%','')) > (lastSlideLeft)){
-					$(this).css('left',(slideWidthPercent-(slideWidthPercent*2))+'%');				
-				
-				}*/
-				
 			}
 		);
 		
@@ -155,11 +136,6 @@ function percentileCreateRotate(elements, options, slideCount, displayCount){
 				
 			}
 		});
-		
-		/*return this.each(function() {
-
-		});*/
-		
 		
 		
 		$(window).bind('resize',$.proxy(function(){
