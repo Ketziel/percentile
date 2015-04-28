@@ -127,6 +127,7 @@ function percentileCreateRotate(elements, options, slideCount, displayCount){
 			progressSlides(targets, 'prev');
 		});
 		
+		percentileHeightWidth(targets, options);
 		percentileCreateRotate(targets, options, targets.find(options.slides).length, percentileVisibleCount(jQuery.parseJSON(options.breakpoints)));
 		
 		var lastSlideLeft = 0;						
@@ -136,6 +137,11 @@ function percentileCreateRotate(elements, options, slideCount, displayCount){
 				
 			}
 		});
+		
+		
+		$(window).bind('load',$.proxy(function(){
+			percentileHeightWidth(targets, options);
+		}, this));
 		
 		
 		$(window).bind('resize',$.proxy(function(){
